@@ -1,6 +1,6 @@
 # Declaration of variables
 C++ := clang++
-C++_FLAGS := -Wall
+C++_FLAGS := -Wall -std=c++17
 SEARCH_PATH = "/usr/lib/x86_64-linux-gnu/"
 LIBRARIES =
 
@@ -32,3 +32,7 @@ clean:
 .PHONY: run
 run: $(EXECUTABLE)
 	./$(EXECUTABLE)
+
+.PHONY: gdb
+gdb: $(EXECUTABLE)
+	gdb $(EXECUTABLE)
